@@ -46,6 +46,7 @@ Thumbs.db
 database.rules.json
 firebase.json
 storage.rules
+firebase-debug.log
 
 # Local Files
 package-lock.json
