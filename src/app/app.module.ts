@@ -9,6 +9,7 @@ import { AboutComponent } from './shared/about/about.component';
 
 import { AngularFireModule } from 'angularfire2';
 import * as firebase from 'firebase';
+import { GamesComponent } from './shared/games/games.component';
 const app = firebase.initializeApp({
   apiKey: 'AIzaSyDZRHNMSQByJ8S9tELJcayJ_N3isiO_0B8',
   authDomain: 'emmys-pampered-pooch.firebaseapp.com',
@@ -21,6 +22,7 @@ const app = firebase.initializeApp({
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'games', component: AboutComponent },
 ];
 
 
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomepageComponent,
-    AboutComponent
+    AboutComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
