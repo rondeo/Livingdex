@@ -6,10 +6,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './shared/homepage/homepage.component';
 import { AboutComponent } from './shared/about/about.component';
+import { GamesComponent } from './shared/games/games.component';
 
 import { AngularFireModule } from 'angularfire2';
 import * as firebase from 'firebase';
-import { GamesComponent } from './shared/games/games.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 const app = firebase.initializeApp({
   apiKey: 'AIzaSyDZRHNMSQByJ8S9tELJcayJ_N3isiO_0B8',
   authDomain: 'emmys-pampered-pooch.firebaseapp.com',
@@ -22,7 +24,7 @@ const app = firebase.initializeApp({
 const appRoutes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'games', component: AboutComponent },
+  { path: 'games', component: GamesComponent },
 ];
 
 
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase, 'Livingdex'),
     RouterModule.forRoot(
       appRoutes,
-    )
+    ),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
