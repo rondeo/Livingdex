@@ -1,0 +1,5 @@
+<h1>Pick A Game</h1>
+<h2>Seriously... Pick the game you want a livingdex in...</h2>
+<ul *ngFor="let game of games | async">
+    <a (click)="customerDetails()">{{game.name}}</a>
+</ul>
