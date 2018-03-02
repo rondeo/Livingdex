@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './shared/homepage/homepage.component';
+import { AboutComponent } from './shared/about/about.component';
 
 import { AngularFireModule } from 'angularfire2';
 import * as firebase from 'firebase';
@@ -18,14 +19,16 @@ const app = firebase.initializeApp({
 });
 
 const appRoutes: Routes = [
-  { path: '', component: HomepageComponent }
+  { path: '', component: HomepageComponent },
+  { path: 'about', component: AboutComponent },
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
