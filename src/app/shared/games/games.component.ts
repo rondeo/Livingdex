@@ -4,13 +4,14 @@ import { Game } from '../../objects/game';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
+import { GamesRoutingModule } from './games-routing.module';
 
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css']
 })
-export class GamesComponent implements OnInit {  
+export class GamesComponent implements OnInit {
   games: Observable<any[]>;
 
   constructor(

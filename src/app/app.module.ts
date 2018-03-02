@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './shared/homepage/homepage.component';
 import { AboutComponent } from './shared/about/about.component';
-import { GamesComponent } from './shared/games/games.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from 'angularfire2';
 import * as firebase from 'firebase';
@@ -21,26 +21,16 @@ const app = firebase.initializeApp({
   messagingSenderId: '821806970037'
 });
 
-const appRoutes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'games', component: GamesComponent },
-];
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    AboutComponent,
-    GamesComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'Livingdex'),
-    RouterModule.forRoot(
-      appRoutes,
-    ),
+    AppRoutingModule,
     AngularFireDatabaseModule,
   ],
   providers: [],
