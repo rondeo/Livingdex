@@ -21,7 +21,7 @@ export class DetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.pokemons = this.db.list('pokemon').valueChanges();
+        this.pokemons = this.db.list('pokemon/:generation').valueChanges();
     }
 
 }

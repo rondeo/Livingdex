@@ -21,7 +21,7 @@ export class GamesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.games = this.db.list('/games').valueChanges();
+        this.games = this.db.list('/pokemon').valueChanges();
     }
 
 }

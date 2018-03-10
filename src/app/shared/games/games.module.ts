@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { GamesComponent } from './games.component';
-import { AddComponent } from './add/add.component';
 
 import { GamesRoutingModule } from './games-routing.module';
 import { DetailComponent } from './detail/detail.component';
@@ -16,7 +15,6 @@ import { DetailComponent } from './detail/detail.component';
     ],
     declarations: [
         GamesComponent,
-        AddComponent,
         DetailComponent
     ]
 })
