@@ -7,22 +7,21 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+    selector: 'app-detail',
+    templateUrl: './detail.component.html',
+    styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  pokemon: any;
+    pokemons: Observable<any[]>;
 
-  constructor(
-    private router: Router,
-    private db: AngularFireDatabase,
-    private route: ActivatedRoute) {
-    this.pokemon = this.route.snapshot.paramMap.get('name');
-  }
+    constructor(
+        private router: Router,
+        private db: AngularFireDatabase,
+        private route: ActivatedRoute) {
+    }
 
-  ngOnInit() {
-    this.pokemon = this.route.snapshot.paramMap.get('name');
-  }
+    ngOnInit() {
+        this.pokemons = this.db.list('pokemon').valueChanges();
+    }
 
 }
