@@ -18,11 +18,10 @@ export class GamesComponent implements OnInit {
         private router: Router,
         private db: AngularFireDatabase
     ) {
-        const games = this.db.list('/games').valueChanges();
     }
 
     ngOnInit(): void {
-        this.games = this.db.list('/games').valueChanges();
+        this.games = this.db.list('/pokemon').valueChanges();
     }
 
 }
