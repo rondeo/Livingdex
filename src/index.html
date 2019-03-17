@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAvcXzmUkgD1bvrjop92JMTVOmZEKZ4lHU",
+      authDomain: "livingdex-a98f9.firebaseapp.com",
+      databaseURL: "https://livingdex-a98f9.firebaseio.com",
+      projectId: "livingdex-a98f9",
+      storageBucket: "livingdex-a98f9.appspot.com",
+      messagingSenderId: "90498188558"
+    };
+    firebase.initializeApp(config);
+  </script>
   <meta charset="utf-8">
   <title>Livingdex</title>
   <base href="/">
@@ -8,7 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>
