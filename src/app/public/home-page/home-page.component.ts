@@ -9,10 +9,14 @@ export class HomePageComponent implements OnInit {
 
   constructor() { }
 
-  generations: [
+  generations: any = [
     { name: "Generation 1" },
     { name: "Generation 2" },
-    { name: "Generation 3" }
+    { name: "Generation 3" },
+    { name: "Generation 4" },
+    { name: "Generation 5" },
+    { name: "Generation 6" },
+    { name: "Generation 7" }
   ]
 
   ngOnInit() {

@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomePageComponent } from './home-page/home-page.component';
-import { MaterialModule } from '../core/material.module';
+import { AppMaterialModule } from '../core/material.module';
 import { PublicRoutingModule } from './publc-routing.module';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PublicRoutingModule } from './publc-routing.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule,
+    AppMaterialModule,
+    MatCardModule,
     PublicRoutingModule
   ],
   providers: [],

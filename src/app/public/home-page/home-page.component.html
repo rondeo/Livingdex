@@ -1,6 +1,7 @@
 <div *ngFor="let generation of generations">
-  <mat-card>
-    Test
+  <mat-card class="generation-card" fxLayout="column" fxLayoutGap="10px">
+    <mat-card-content>
+      <h1>{{generation.name}}</h1>
+    </mat-card-content>
   </mat-card>
 </div>
-<h1>Test</h1>
