@@ -1,5 +1,5 @@
-<div *ngFor="let generation of generations">
-  <mat-card class="generation-card" fxLayout="column" fxLayoutGap="10px">
+<div *ngFor="let generation of generations; let i = index">
+  <mat-card id="gen{{i}}">
     <mat-card-content>
       <h1>{{generation.name}}</h1>
     </mat-card-content>
