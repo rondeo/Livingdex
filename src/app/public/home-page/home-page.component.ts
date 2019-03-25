@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+
+import { Observable } from 'rxjs';
+
+import { Generation } from 'src/app/core/models/';
+import { GenerationsService } from 'src/app/core/services/generations.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,19 +12,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  
+  generations: Observable<Generation[]>;
 
-  constructor() { }
+  constructor(
+    private db: AngularFirestore,
+    private genService: GenerationsService
+    ) {
+    this.generations = this.db.collection<Generation>('generations').valueChanges();
+  }
 
-  generations: any = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-    { number: 6 },
-    { number: 7 },
-    { number: 8 }
-  ]
+  public addItem() {
+    this.genService.addGeneration({ name: 'Generation 8', number: 8});
+  }
 
   // generations: any = [
   //   { number: 1, image_url: 'https://cdn.bulbagarden.net/upload/8/86/Kanto_Town_Map_RBY.png' },
