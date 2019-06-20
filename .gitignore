@@ -44,14 +44,4 @@ testem.log
 Thumbs.db
 
 # Environment Files
-environment.ts
-environment.prod.ts
-
-#Firebase
-storage.rules
-/functions
-.firebaserc
-database.rules.json
-firebase.json
-firestore.indexes.json
-package-lock.json
+environments/
