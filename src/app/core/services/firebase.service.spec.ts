@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GenerationsService } from './generations.service';
+import { FirebaseService } from './firebase.service';
 
-describe('GenerationsService', () => {
+describe('FirebaseService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: GenerationsService = TestBed.get(GenerationsService);
+    const service: FirebaseService = TestBed.get(FirebaseService);
     expect(service).toBeTruthy();
   });
 });

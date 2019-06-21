@@ -10,27 +10,26 @@ import { Generation } from '../models';
 @Injectable({
   providedIn: 'root'
 })
-export class GenerationsService {
+export class FirebaseService {
 
   generations: AngularFirestoreCollection<Generation>;
   private genDoc: AngularFirestoreDocument<Generation>;
+
+  dbCol = this.db.collection('generations');
 
   constructor(private db: AngularFirestore) {
     this.generations = db.collection<Generation>('generations');
   }
 
-  public addGeneration(generation: Generation) {
-    this.generations.add(generation);
+  getGenerationResolver(id) {
+    return this.dbCol.doc(id).snapshotChanges();
   }
 
-  public deleteTask(id) {
-    this.genDoc = this.db.doc<Generation>(`generations/${id}`);
-    this.genDoc.delete();
-  }
-
-  public updateTask(id, updatedGen) {
-    this.genDoc = this.db.doc<Generation>(`generation/${id}`);
-    this.genDoc.update(updatedGen);
+  addGeneration(gen: Generation) {
+    return this.dbCol.doc(gen.name).set({
+      name: gen.name,
+      number: gen.number
+    });
   }
 
 }

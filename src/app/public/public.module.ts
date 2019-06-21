@@ -6,10 +6,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppMaterialModule } from '../core/material.module';
 import { PublicRoutingModule } from './publc-routing.module';
+import { GenerationComponent } from './generation/generation.component';
+import { GenerationResolver } from '../core/resolvers/generation.resolver';
 
 @NgModule({
   declarations: [
-    HomePageComponent
+    HomePageComponent,
+    GenerationComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +22,7 @@ import { PublicRoutingModule } from './publc-routing.module';
   ],
   providers: [
     AngularFirestore,
+    GenerationResolver
   ],
   bootstrap: []
 })
