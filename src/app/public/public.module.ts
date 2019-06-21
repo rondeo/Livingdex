@@ -7,7 +7,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AppMaterialModule } from '../core/material.module';
 import { PublicRoutingModule } from './publc-routing.module';
 import { GenerationComponent } from './generation/generation.component';
-import { GenerationResolver } from '../core/resolvers/generation.resolver';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { GenerationResolver } from '../core/resolvers/generation.resolver';
     PublicRoutingModule
   ],
   providers: [
-    AngularFirestore,
-    GenerationResolver
+    AngularFirestore
   ],
   bootstrap: []
 })

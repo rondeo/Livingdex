@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
-  AngularFirestoreDocument,
   AngularFirestore,
   AngularFirestoreCollection
 } from '@angular/fire/firestore';
 
 import { Generation } from '../models';
+import { Game } from '../models/game';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,6 @@ import { Generation } from '../models';
 export class FirebaseService {
 
   generations: AngularFirestoreCollection<Generation>;
-  private genDoc: AngularFirestoreDocument<Generation>;
 
   dbCol = this.db.collection('generations');
 
@@ -21,8 +20,8 @@ export class FirebaseService {
     this.generations = db.collection<Generation>('generations');
   }
 
-  getGenerationResolver(id) {
-    return this.dbCol.doc(id).snapshotChanges();
+  getGenerationGames(id) {
+    return this.db.collection('generations').doc(id).collection<Game>('games').valueChanges();
   }
 
   addGeneration(gen: Generation) {
