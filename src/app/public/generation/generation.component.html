@@ -1,0 +1,8 @@
+<div *ngFor="let game of games | async">
+  <!-- [ngStyle]="{'background-image': 'url(' + generation.image_url + ')', 'background-size': '100% 350%', 'background-position': 'center'}" -->
+<mat-card (click)="viewGame(game)">
+  <mat-card-content>
+    <h1>{{game.displayName}}</h1>
+  </mat-card-content>
+</mat-card>
+</div>

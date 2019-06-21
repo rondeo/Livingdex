@@ -1,0 +1,8 @@
+<div *ngFor="let generation of generations | async">
+    <!-- [ngStyle]="{'background-image': 'url(' + generation.image_url + ')', 'background-size': '100% 350%', 'background-position': 'center'}" -->
+  <mat-card (click)="viewDetails(generation)">
+    <mat-card-content>
+      <h1>Generation {{generation.number}}</h1>
+    </mat-card-content>
+  </mat-card>
+</div>
