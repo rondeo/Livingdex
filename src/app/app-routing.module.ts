@@ -2,11 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/generations',
-    pathMatch: 'full'
-  }
+  { path: '', redirectTo: 'generations', pathMatch: 'full' }
 ];
 
 @NgModule({
