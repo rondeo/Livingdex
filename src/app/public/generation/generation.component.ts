@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { FirebaseService } from 'src/app/core/services/firebase.service';
 import { Game } from 'src/app/core/models/game';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-generation',
@@ -32,7 +33,9 @@ export class GenerationComponent implements OnInit {
   }
 
   viewGame(item) {
-    this.router.navigate(['generations', this.route.params.value.genId, item.name]);
+    this.route.params.subscribe( route => {
+      this.router.navigate(['generations', route.genId, item.name]);
+    });
   }
 
 }

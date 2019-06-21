@@ -9,7 +9,7 @@ import { Pokémon } from 'src/app/core/models/pokémon';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class GameComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private firebaseService: FirebaseService,) { }
+    private firebaseService: FirebaseService, ) { }
 
   ngOnInit() {
     this.route.data.subscribe(routeData => {
