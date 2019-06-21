@@ -6,6 +6,7 @@ import {
 
 import { Generation } from '../models';
 import { Game } from '../models/game';
+import { Pokémon } from '../models/pokémon';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class FirebaseService {
 
   getGenerationGames(id) {
     return this.db.collection('generations').doc(id).collection<Game>('games').valueChanges();
+  }
+
+  getGamePokémon(gen, game) {
+    return this.db.collection('generations').doc(gen).collection('games').doc(game).collection<Pokémon>('pokémon').valueChanges();
   }
 
   addGeneration(gen: Generation) {

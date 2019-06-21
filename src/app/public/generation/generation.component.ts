@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { FirebaseService } from 'src/app/core/services/firebase.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Observable } from 'rxjs';
+
+import { FirebaseService } from 'src/app/core/services/firebase.service';
 import { Game } from 'src/app/core/models/game';
 
 @Component({
@@ -16,17 +18,21 @@ export class GenerationComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private firebaseService: FirebaseService,
+    private router: Router
     ) { }
 
   ngOnInit() {
     this.route.data.subscribe(routeData => {
-      const data = routeData.data;
-      this.getGenData(this.route.snapshot.params.id);
+      this.getGenData(this.route.snapshot.params.genId);
     });
   }
 
   getGenData(data) {
     this.games = this.firebaseService.getGenerationGames(data);
+  }
+
+  viewGame(item) {
+    this.router.navigate(['generations', this.route.params.value.genId, item.name]);
   }
 
 }
